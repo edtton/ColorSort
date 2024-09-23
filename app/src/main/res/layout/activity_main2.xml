@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:id="@+id/main"
+tools:context=".MainActivity2">
+
+<TextView
+    android:layout_height="wrap_content"
+    android:text="Sort the red, green, and blue balls. Yellow spots are empty."
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:textSize="18sp"
+    android:layout_margin="20dp"
+    />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="5"
+        android:rowCount="5" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="?"
+            android:id="@+id/top_0"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="?"
+            android:id="@+id/top_1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="?"
+            android:id="@+id/top_2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="?"
+            android:id="@+id/top_3"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="?"
+            android:id="@+id/top_4"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/zero_3"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/one_3"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/two_3"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/three_3"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/four_3"
+            android:onClick="moveBall"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/zero_2"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/one_2"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/two_2"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/three_2"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/four_2"
+            android:onClick="moveBall"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/zero_1"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/one_1"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/two_1"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/three_1"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/four_1"
+            android:onClick="moveBall"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/zero_0"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/one_0"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/two_0"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/three_0"
+            android:onClick="moveBall"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFF00"
+            android:id="@+id/four_0"
+            android:onClick="moveBall"/>
+
+    </GridLayout>
+
+
+</LinearLayout>

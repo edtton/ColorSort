@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="Color Sort"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textColor="#FF5722"
+        android:textSize="40sp"
+        android:layout_margin="16dp"
+        />
+    <Button
+        android:id="@+id/buttonEasy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickStartGame"
+        android:textSize="20sp"
+        android:text="Play Easy Game (3 colors, 5 columns)"/>
+    <Button
+        android:id="@+id/buttonHard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickStartGame"
+        android:textSize="20sp"
+        android:text="Play Hard Game (3 colors, 4 columns)"/>
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="@string/game_desc"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="28sp"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="@string/difficulty_desc"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="28sp"
+        />
+
+</LinearLayout>

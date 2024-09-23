@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">p1_eton</string>
+    <string name="game_desc">
+        The object of this game is to sort the colors into individual columns where all of the colors match. You only move balls one at a time, either into an empty column or a column with a ball with the same top color.
+    </string>
+    <string name="difficulty_desc">
+        It should be always possible to win the easy game but not the hard one!
+    </string>
+</resources>
