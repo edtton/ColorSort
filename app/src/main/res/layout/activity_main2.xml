@@ -29,35 +29,30 @@ tools:context=".MainActivity2">
             android:layout_height="wrap_content"
             android:enabled="false"
             android:visibility="invisible"
-            android:text="?"
             android:id="@+id/top_0"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:enabled="false"
             android:visibility="invisible"
-            android:text="?"
             android:id="@+id/top_1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:enabled="false"
             android:visibility="invisible"
-            android:text="?"
             android:id="@+id/top_2"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:enabled="false"
             android:visibility="invisible"
-            android:text="?"
             android:id="@+id/top_3"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:enabled="false"
             android:visibility="invisible"
-            android:text="?"
             android:id="@+id/top_4"/>
 
         <Button

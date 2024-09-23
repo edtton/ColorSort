@@ -26,6 +26,7 @@ import android.util.Log;
 
 public class MainActivity2 extends AppCompatActivity {
     boolean IS_EASY;
+    int numColumns = 0;
 
     public enum COLOR { RED, GREEN, BLUE, YELLOW}
 
@@ -87,7 +88,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Intent intent = getIntent();
         IS_EASY = intent.getBooleanExtra("easy", true);
-        String difficulty = IS_EASY ? "easy" : "hard";
+        numColumns = IS_EASY ? 5 : 4;
 
         four_0 = findViewById(R.id.four_0);
         four_1 = findViewById(R.id.four_1);
@@ -139,11 +140,11 @@ public class MainActivity2 extends AppCompatActivity {
             }
         }
 
-        Log.d("initialization:", stacks[0].toString());
-        Log.d("initialization:", stacks[1].toString());
-        Log.d("initialization:", stacks[2].toString());
-        Log.d("initialization:", stacks[3].toString());
-        Log.d("initialization:", stacks[4].toString());
+//        Log.d("initialization:", stacks[0].toString());
+//        Log.d("initialization:", stacks[1].toString());
+//        Log.d("initialization:", stacks[2].toString());
+//        Log.d("initialization:", stacks[3].toString());
+//        Log.d("initialization:", stacks[4].toString());
 
         zero_0 = findViewById(R.id.zero_0);
         zero_1 = findViewById(R.id.zero_1);
@@ -201,6 +202,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void moveBall(View v) {
+        Log.d("initialization:", "==========================================================");
         int id = v.getId();
         int clickedColumn = -1;
         int clickedRow = -1;
@@ -306,17 +308,23 @@ public class MainActivity2 extends AppCompatActivity {
 
             indicatorButton = invisibleButton;
 
-            Log.d("initialization:", "==== NEW COLUMNS ====");
-            Log.d("initialization:", stacks[0].toString());
-            Log.d("initialization:", stacks[1].toString());
-            Log.d("initialization:", stacks[2].toString());
-            Log.d("initialization:", stacks[3].toString());
-            Log.d("initialization:", stacks[4].toString());
-            Log.d("initialization", "top of column 0 = " + getResources().getResourceEntryName(topOf0.getId()));
-            Log.d("initialization", "top of column 1 = " + getResources().getResourceEntryName(topOf1.getId()));
-            Log.d("initialization", "top of column 2 = " + getResources().getResourceEntryName(topOf2.getId()));
-            Log.d("initialization", "top of column 3 = " + getResources().getResourceEntryName(topOf3.getId()));
-            Log.d("initialization", "top of column 4 = " + getResources().getResourceEntryName(topOf4.getId()));
+            Log.d("initialization:", WAITING_COLOR.toString() + " " + clickedColumn);
+            if (!validSpacesLeft(stacks, WAITING_COLOR, clickedColumn)) {
+//                Toast.makeText(getApplicationContext(), "GAME LOST " + clickedColumn, Toast.LENGTH_SHORT).show();
+                playAgain(false);
+            }
+
+//            Log.d("initialization:", "==== NEW COLUMNS ====");
+//            Log.d("initialization:", stacks[0].toString());
+//            Log.d("initialization:", stacks[1].toString());
+//            Log.d("initialization:", stacks[2].toString());
+//            Log.d("initialization:", stacks[3].toString());
+//            Log.d("initialization:", stacks[4].toString());
+//            Log.d("initialization", "top of column 0 = " + getResources().getResourceEntryName(topOf0.getId()));
+//            Log.d("initialization", "top of column 1 = " + getResources().getResourceEntryName(topOf1.getId()));
+//            Log.d("initialization", "top of column 2 = " + getResources().getResourceEntryName(topOf2.getId()));
+//            Log.d("initialization", "top of column 3 = " + getResources().getResourceEntryName(topOf3.getId()));
+//            Log.d("initialization", "top of column 4 = " + getResources().getResourceEntryName(topOf4.getId()));
         }
         else {
             if (stacks[clickedColumn].size() >= 4) {
@@ -353,23 +361,81 @@ public class MainActivity2 extends AppCompatActivity {
                         setButtonColor(topOf4, WAITING_COLOR);
                         break;
                 }
-                Log.d("initialization:", "==== NEW COLUMNS ====");
-                Log.d("initialization:", stacks[0].toString());
-                Log.d("initialization:", stacks[1].toString());
-                Log.d("initialization:", stacks[2].toString());
-                Log.d("initialization:", stacks[3].toString());
-                Log.d("initialization:", stacks[4].toString());
-                Log.d("initialization", "top of column 0 = " + getResources().getResourceEntryName(topOf0.getId()));
-                Log.d("initialization", "top of column 1 = " + getResources().getResourceEntryName(topOf1.getId()));
-                Log.d("initialization", "top of column 2 = " + getResources().getResourceEntryName(topOf2.getId()));
-                Log.d("initialization", "top of column 3 = " + getResources().getResourceEntryName(topOf3.getId()));
-                Log.d("initialization", "top of column 4 = " + getResources().getResourceEntryName(topOf4.getId()));
+//                Log.d("initialization:", "==== NEW COLUMNS ====");
+//                Log.d("initialization:", stacks[0].toString());
+//                Log.d("initialization:", stacks[1].toString());
+//                Log.d("initialization:", stacks[2].toString());
+//                Log.d("initialization:", stacks[3].toString());
+//                Log.d("initialization:", stacks[4].toString());
+//                Log.d("initialization", "top of column 0 = " + getResources().getResourceEntryName(topOf0.getId()));
+//                Log.d("initialization", "top of column 1 = " + getResources().getResourceEntryName(topOf1.getId()));
+//                Log.d("initialization", "top of column 2 = " + getResources().getResourceEntryName(topOf2.getId()));
+//                Log.d("initialization", "top of column 3 = " + getResources().getResourceEntryName(topOf3.getId()));
+//                Log.d("initialization", "top of column 4 = " + getResources().getResourceEntryName(topOf4.getId()));
 
-                if (gameWon(stacks)) {
-                    playAgain();
-                }
+                //if (validSpacesLeft(stacks, COLOR.RED, -1) || validSpacesLeft(stacks, COLOR.GREEN, -1) || validSpacesLeft(stacks, COLOR.BLUE, -1)) {
+                    if (gameWon(stacks)) {
+                        playAgain(true);
+                    }
+                //}
+//                else {
+//                    Toast.makeText(getApplicationContext(), validSpacesLeft(stacks, COLOR.RED, -1) + "" + validSpacesLeft(stacks, COLOR.GREEN, -1) + "" + validSpacesLeft(stacks, COLOR.BLUE, -1), Toast.LENGTH_SHORT).show();
+////                    playAgain(false);
+//                }
                 return;
             }
+        }
+    }
+
+    public boolean validSpacesLeft (Stack<COLOR>[] stacks, COLOR targetColor, int originColumn) {
+        int numColumnsWithColor = 0;
+        int numColumnsWithSpace = 0;
+
+        for (int i = 0; i < numColumns; i++) {
+            if (i == originColumn) {
+                Log.d("initialization", "skipping over origin column " + i);
+                continue;
+            }
+
+            if (stacks[i].isEmpty()) {
+                Log.d("initialization", "column " + i + " is empty");
+                return true;
+            }
+
+            if (columnMatched(stacks[i], targetColor)) {
+                Log.d("initialization", "column " + i + " matched for " + targetColor.toString());
+                return true;
+            }
+
+            if (stacks[i].peek() == targetColor && stacks[i].size() < 4) {
+                Log.d("initialization", "column " + i + " has space for " + targetColor.toString());
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean columnMatched (Stack<COLOR> stack, COLOR colorTarget) {
+        COLOR currentColor = colorTarget;
+        int count = 0;
+
+        if (!stack.isEmpty()) {
+            for (COLOR color : stack) {
+                if (color == currentColor) {
+                    count++;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        if (count == 4) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -415,9 +481,15 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    public void playAgain() {
+    public void playAgain(boolean gameWon) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
-        builder.setMessage("You won! Would you like to play again?");
+        if (gameWon) {
+            builder.setMessage("You WON! Would you like to play again?");
+        }
+        else {
+            builder.setMessage("You LOST! Would you like to play again?");
+        }
+
         builder.setTitle("Done");
         builder.setCancelable(false);
 
